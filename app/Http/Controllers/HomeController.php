@@ -6,22 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Models\Crew;
 class HomeController extends Controller
 {
     public function index() 
     {
-        $data = ['title' => 'Taxi',
-                'Html'=> 'Illuminate\Html\HtmlFacade',
+        $data = ['title' => 'Такси в Москве',
                 'number' => '0-797-707-707'];
         return view('pages.index')->with($data);
     }
     
     public function about()
     {
-        $data = ['title' => 'Taxi',
-                'Html'=> 'Illuminate\Html\HtmlFacade',
-                'number' => '0-797-707-707'];
+        $data = ['title' => 'О нас',
+                'number' => '0-797-707-707',
+                'crew' => Crew::all()];
         return view('pages.about')->with($data);
     }
 }

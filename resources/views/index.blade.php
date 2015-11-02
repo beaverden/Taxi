@@ -10,9 +10,6 @@
     
     <title>{{$title}}</title>
     
-    {!! Html::style('stylesheets/order.css') !!}
-    {!! Html::style('stylesheets/hover.css') !!}
-    {!! Html::style('stylesheets/sidebar.css') !!}
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- /.Jquery -->
@@ -22,6 +19,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
     <!-- /.Bootstrap css -->
     
+    {!! Html::style('stylesheets/order.css') !!}
+    {!! Html::style('stylesheets/menu.css') !!}
+    
     <!-- Font awesome -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -30,54 +30,58 @@
     
     <div class="container">
         <!-- Главное меню -->
-        <nav class="navbar navbar-inverse sidebar navbar-fixed-bottom collapse in" role="navigation">
-            
-
-            <div class="nav-side-menu">
-                <div class="brand">Taxi</div>
-                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-                    <div class="menu-list">
-
-                        <ul id="menu-content" class="menu-content collapse out menuhover">
-                             <li>
-                                <a href="about">
-                                <i class="fa fa-user fa-lg"></i> О нас
-                                </a>
-                              </li>
-
-                             <li>
-                              <a href="#">
-                              <i class="fa fa-users fa-lg"></i> Заказать
-                              </a>
-                            </li>
-                            
-                            <li>
-                              <a href="#">
-                              <i class="fa fa-cab fa-lg"></i> Услуги
-                              </a>
-                            </li>
-                            
-                            <li>
-                              <a href="#">
-                              <i class="fa fa-comments fa-lg"></i> Отзывы
-                              </a>
-                            </li>
-                            
-                            <li>
-                              <a href="#">
-                              <i class="fa fa-phone fa-lg"></i> Контакты
-                              </a>
-                            </li>
-                        </ul>
-                 </div>
+        <div>{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</div>
+        <header class="navbar navbar-inverse bs-docs-nav" role="banner">
+            <div class="container">
+              <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href="./" class="navbar-brand">Такси в Москве</a>
+              </div>
+              <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul style="font-weight: bold; font-family: Verdana, sans-serif;" 
+                    class="nav navbar-nav">
+                  <li>
+                    <a href="about">
+                        <i class="fa fa-user fa-lg"></i> О нас
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="order">
+                        <i class="fa fa-calendar fa-lg"></i> Заказать
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="services">
+                        <i class="fa fa-cab fa-lg"></i> Услуги
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="comments">
+                        <i class="fa fa-comments fa-lg"></i> Отзывы
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="contact">
+                        <i class="fa fa-phone fa-lg"></i> Контакты
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-        </nav>
+        </header>
         <!-- /.Главное меню -->
         
         <!-- Контект -->
-        <div class="main container">
-            <div>{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</div>
+        <div class="container">
             <div class="text-center">
                 <div style="padding-bottom : 8px;">
                     <!-- Кнопка контактов -->
