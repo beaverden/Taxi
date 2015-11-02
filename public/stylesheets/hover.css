@@ -1,0 +1,8 @@
+.menuhover > li:hover {
+    background-image:  url('../img/hoverMenu.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    color : #000000;
+}
+.indexhover > h2:hover {
+}

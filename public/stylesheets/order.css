@@ -1,0 +1,6 @@
+.bg-image {
+    background-image:  url('http://photos.gograph.com/thumbs/CSP/CSP992/k13314722.jpg');
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+               /* optional, center the image */
+}
