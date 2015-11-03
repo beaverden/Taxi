@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Сначала телефоны -->
+    <!-- Phones first -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- /.Сначала телефоны -->
+    <!-- /.Phones first -->
     
     <title>{{$title}}</title>
     
@@ -29,7 +29,7 @@
 
     
     <div class="container">
-        <!-- Главное меню -->
+        <!-- Main menu -->
         <div>{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</div>
         <header class="navbar navbar-inverse bs-docs-nav" role="banner">
             <div class="container">
@@ -78,27 +78,27 @@
               </nav>
             </div>
         </header>
-        <!-- /.Главное меню -->
+        <!-- /.Main menu -->
         
-        <!-- Контект -->
+        <!-- Content -->
         <div class="container">
             <div class="text-center">
                 <div style="padding-bottom : 8px;">
-                    <!-- Кнопка контактов -->
+                    <!-- Contacts-->
                     <a style="text-decoration:none;" href='contacts.php'>
-                    <!-- /.Кнопка контактов -->
+                    <!-- /.Contacts -->
 
                         <span style="font-size: 18px; " class="label label-success" >
                         <span class="glyphicon glyphicon-earphone"></span> Позвоните нам</span>  
                     </a> 
                 </div>
                 <div >
-                <!-- Номер телефона и флаг -->
+                <!-- Phone number and the flag -->
                 <span style="font-size:18px;" class="badge">
                     <a style="text-decoration: none; color: #222" href="tel:{{ $number }}">{{ $number }}</a>
                 </span>
                 {!! Html::image('img/ru.png', 'ruflag', array('class' => 'img')) !!}
-                <!-- /. Номер телефона и флаг -->
+                <!-- /.Phone number and the flag -->
                 </div>
             </div>
 
@@ -108,16 +108,12 @@
         </div>
         </br> </br> </br>
     </div>
-    <!-- /.Контект -->
+    <!-- /.Content -->
         
     <!-- Bootstrap js-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <!-- /.Bootstrap js-->
     
 
-    
-    <!--Sidebar js -->
-    <script src="js/sidebar.js" type="text/javascript"></script>
-    <!-- /.Sidebar js -->
 </body>
 </html>

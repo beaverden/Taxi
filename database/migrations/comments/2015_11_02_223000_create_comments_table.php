@@ -7,7 +7,11 @@ class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * ........ Columns ........ 
+     * Name - member's name
+     * Photo - his photo located in /img/photos
+     * Info - additional info
+     * ........ Columns ........ 
      * @return void
      */
     public function up()
