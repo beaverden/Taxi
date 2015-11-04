@@ -1,49 +1,48 @@
 @extends('index')
 @section('content')
 
-<div class="content">
-    @if (isset($message))
-        <p class="label label-success"> {{ $message }}</p>
-    @endif
+
     
+    @include('flash::message')
     
     <h2 class="page-header">Оставьте отзыв</h2>
-    
     <!-- Comment form -->
-    {!! Form::open(array('action' => 'HomeController@addComment')) !!}
-    <!-- Email -->
-    <div class="form-group">
-        {!! Form::label('Адресс электронной почты') !!}
-        {!! Form::email('email', null, 
-            array('class' => 'form-control', 
-                  'placeholder' => 'Не обязательно')) !!}
-    </div>
-    <!-- /.Email -->
-    <!-- Name -->
-    <div class="form-group">
-        {!! Form::label('Имя') !!}
-        {!! Form::text('name', null, 
-            array('required', 
-                  'class'=>'form-control', 
-                  'placeholder'=>'Ваше имя')) !!}
-    </div>
-    <!-- /.Name -->
+    {!! Form::open(array('action' => 'HomeController@addComment', 'role' => 'form')) !!}
+        <!-- Email -->
+        <div class="form-group">
+            {!! Form::label('Адресс электронной почты') !!}
+            {!! Form::email('email', null, 
+                array('class' => 'form-control', 
+                      'placeholder' => 'Не обязательно',
+                      'maxlength' => '50')) !!}
+        </div>
+        <!-- /.Email -->
+        <!-- Name -->
+        <div class="form-group">
+            {!! Form::label('Имя') !!}
+            {!! Form::text('name', null, 
+                array('required', 
+                      'class'=>'form-control', 
+                      'placeholder'=>'Ваше имя',
+                      'maxlength' => '50')) !!}
+        </div>
+        <!-- /.Name -->
 
-    <!-- Message -->
-    <div class="form-group">
-        {!! Form::label('Сообщение') !!}
-        {!! Form::textarea('comment', null, 
-            array('required', 
-                  'class'=>'form-control', 
-                  'placeholder'=>'Не больше 140 символов',
-                  'maxlength' => "140",
-                  'rows' => "2")) !!}
-    </div>
-    <!-- /.Message -->
-    <div class="form-group">
-        {!! Form::submit('Оставить!', 
-          array('class' => 'btn btn-success')) !!}
-    </div>
+        <!-- Message -->
+        <div class="form-group">
+            {!! Form::label('Сообщение') !!}
+            {!! Form::textarea('comment', null, 
+                array('required', 
+                      'class'=>'form-control', 
+                      'placeholder'=>'Не больше 140 символов',
+                      'maxlength' => '140',
+                      'rows' => '2')) !!}
+        </div>
+        <!-- /.Message -->
+        <div class="form-group">
+            {!! Form::submit('Оставить!', 
+              array('class' => 'btn btn-success')) !!}
+        </div>
     {!! Form::close() !!}
     <!-- /.Comment form -->
     
@@ -64,5 +63,5 @@
     <div class="text-center">
         {!! $comments->render() !!}
     </div>
-</div>
+
 @stop

@@ -13,17 +13,16 @@
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- /.Jquery -->
-    
+     
     <!-- Bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
     <!-- /.Bootstrap css -->
     
-    {!! Html::style('stylesheets/order.css') !!}
-    {!! Html::style('stylesheets/menu.css') !!}
-    
     <!-- Font awesome -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    {!! Html::style('stylesheets/menu.css') !!}
 </head>
 <body>
 
@@ -31,8 +30,7 @@
     <div class="container">
         <!-- Main menu -->
         <div>{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</div>
-        <header class="navbar navbar-inverse bs-docs-nav" role="banner">
-            <div class="container">
+        <div class="navbar navbar-inverse bs-docs-nav" role="banner">
               <div class="navbar-header">
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
                   <span class="sr-only">Toggle navigation</span>
@@ -64,6 +62,12 @@
                   </li>
                   
                   <li>
+                    <a href="services">
+                        <i class="fa fa-plane fa-lg"></i> В Аэропорт
+                    </a>
+                  </li>
+                  
+                  <li>
                     <a href="comments">
                         <i class="fa fa-comments fa-lg"></i> Отзывы
                     </a>
@@ -76,23 +80,22 @@
                   </li>
                 </ul>
               </nav>
-            </div>
-        </header>
+        </div>
         <!-- /.Main menu -->
         
         <!-- Content -->
-        <div class="container">
+        <div>
             <div class="text-center">
                 <div style="padding-bottom : 8px;">
                     <!-- Contacts-->
-                    <a style="text-decoration:none;" href='contacts.php'>
+                    <a style="text-decoration:none;" href='contacts'>
                     <!-- /.Contacts -->
 
                         <span style="font-size: 18px; " class="label label-success" >
                         <span class="glyphicon glyphicon-earphone"></span> Позвоните нам</span>  
                     </a> 
                 </div>
-                <div >
+                <div>
                 <!-- Phone number and the flag -->
                 <span style="font-size:18px;" class="badge">
                     <a style="text-decoration: none; color: #222" href="tel:{{ $number }}">{{ $number }}</a>

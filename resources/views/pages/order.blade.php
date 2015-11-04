@@ -2,9 +2,7 @@
 @section('content')
 
 <div class="content">
-    @if (isset($message))
-        <p class="label label-success"> {{ $message }}</p>
-    @endif
+    @include('flash::message')
     
     
     <h2 class="page-header text-center">Заказать</h2>
@@ -17,8 +15,9 @@
         {!! Form::label('Имя') !!}
         {!! Form::text('name', null, 
             array('required', 
-                  'class'=>'form-control', 
-                  'placeholder'=>'Ваше имя')) !!}
+                  'class' => 'form-control', 
+                  'placeholder' => 'Ваше имя',
+                  'maxlength' => '50')) !!}
     </div>
     <!-- /.Name -->
     
@@ -28,7 +27,8 @@
         {!! Form::text('phone', null, 
             array('required', 
                   'class'=>'form-control', 
-                  'placeholder'=>'(495)555-55-55')) !!}
+                  'placeholder'=>'(495)555-55-55',
+                  'maxlength' => '15')) !!}
     </div>
     <!-- /.Phone number -->
     
@@ -38,7 +38,8 @@
         {!! Form::text('adress', null, 
             array('required', 
                   'class'=>'form-control', 
-                  'placeholder'=>'Ул, дом, подъезд и т.д.')) !!}
+                  'placeholder'=>'Ул, дом, подъезд и т.д.',
+                  'maxlength' => '50')) !!}
     </div>
     <!-- /.Adress -->
     
@@ -48,7 +49,8 @@
         {!! Form::text('destination', null, 
             array('required', 
                   'class'=>'form-control', 
-                  'placeholder'=>'Ул, дом, подъезд и т.д.')) !!}
+                  'placeholder' => 'Ул, дом, подъезд и т.д.',
+                  'maxlength' => '50')) !!}
     </div>
     <!-- /.Destination Adress -->
        

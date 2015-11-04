@@ -7,21 +7,20 @@ class CreateCrewTable extends Migration
 {
     /**
      * Run the migrations.
-     * ........ Столбцы таблицы ........ 
-     * Name - имя участника
-     * Photo - его фото, указывается путь в public/img/photos
-     * Info - обычно - информация о участнике, его стаж и так далее
-     * ........ Столбцы таблицы ........ 
-     * 
+     * ........ Columns ........ 
+     * Name - member's name
+     * Photo - his photo located in /img/photos
+     * Info - additional info
+     * ........ Columns ........ 
      * @return void
-     */
+    */
     public function up()
     {
         Schema::create('crew', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("name",50);
-            $table->string("photo",60);
-            $table->string("info",200);
+            $table->string('name',50);
+            $table->string('photo',60);
+            $table->string('info',200);
             $table->timestamps();
         });
     }

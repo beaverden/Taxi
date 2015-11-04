@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Flash;
+use Session;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Crew;
 use App\Models\Comment;
+use App\Models\Order;
 use App\Http\Requests\CommentFormRequest;
+use App\Http\Requests\OrderFormRequest;
 
 class HomeController extends Controller
 {
@@ -61,8 +65,8 @@ class HomeController extends Controller
         
         $newMessage->save();
         
-        return \Redirect::route('comments')
-        ->with('message', 'Спасибо за ваш отзыв');
+        Flash::success('Спасибо за ваш отзыв.');
+        return \Redirect::route('comments');
     }
     
     /**
@@ -76,7 +80,26 @@ class HomeController extends Controller
                  'number' => '0-797-707-707'];
         return view('pages.order')->with($data);
     }
+    
+    /**
+     * 
+     * @return type array
+     */
+    
+    public function addOrder(OrderFormRequest $request) 
+    {
+        $newOrder = new Order;
+        $newOrder->name = $request->get('name');
+        $newOrder->phone = $request->get('phone');
+        $newOrder->adress = $request->get('adress');
+        $newOrder->destination = $request->get('destination');
+        $newOrder->ip = $request->getClientIp();
 
+        $newOrder->save();
+        Flash::success('Спасибо за заказ. В скором времени вам перезвонят.');
+        return \Redirect::route('order');
+        
+    }
     
 }
    

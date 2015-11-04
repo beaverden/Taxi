@@ -3,24 +3,23 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
-     * ........ Columns ........ 
-     * Comment - comment
-     * Name - commentator's name
-     * Email - commentator's email (optional)
-     * ........ Columns ........ 
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('comment',140);
+            
             $table->string('name',50);
-            $table->string('email',50)->nullable();
+            $table->string('phone',15);
+            $table->string('adress',50);
+            $table->string('destination',50);
+            
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('comments');
+        Schema::drop('orders');
     }
 }
