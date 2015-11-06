@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Flash;
 use Session;
+use Auth;
+use Validator;
+use Input;
+use Redirect;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -13,6 +17,7 @@ use App\Models\Comment;
 use App\Models\Order;
 use App\Http\Requests\CommentFormRequest;
 use App\Http\Requests\OrderFormRequest;
+use App\Http\Requests\LoginFormRequest;
 
 class HomeController extends Controller
 {
@@ -66,7 +71,7 @@ class HomeController extends Controller
         $newMessage->save();
         
         Flash::success('Спасибо за ваш отзыв.');
-        return \Redirect::route('comments');
+        return Redirect::route('comments');
     }
     
     /**
@@ -97,8 +102,43 @@ class HomeController extends Controller
 
         $newOrder->save();
         Flash::success('Спасибо за заказ. В скором времени вам перезвонят.');
-        return \Redirect::route('order');
+        return Redirect::route('order');
         
+    }
+    
+    /**
+    * Handles whether the user is logged in or not
+     * If not - sends him to login page (admin)
+     * Else - sends him to (adminPage)
+    * @return type array
+    */  
+    public function admin() 
+    {
+        if (Auth::check()) {
+            $data = ['title' => 'Диспетчер'];
+            return view('pages.adminPage')->with($data);
+        } else {
+            $data = ['title' => 'Диспетчер'];
+            return view('pages.admin')->with($data);
+        }
+           
+    }
+    /**
+     * Handles the post request to login
+      * If the authentification is successful - sends the user back to (admin) 
+      * But now logged in 
+     * @param LoginFormRequest $request
+     * @return type redirect
+     */
+    public function adminLogin(LoginFormRequest $request) {
+        $data = ['password' => Input::get('password')];
+        if (Auth::attempt($data)) {
+            Flash::message('Logged!');
+            return Redirect::route('admin');
+        } else {
+            Flash::message('Failed!');
+            return Redirect::route('admin');
+        }
     }
     
 }

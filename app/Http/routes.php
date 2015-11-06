@@ -23,3 +23,7 @@ Route::post('/comments', ['uses' => 'HomeController@addComment', 'as' => 'addCom
 Route::get('/order', ['uses' => 'HomeController@order', 'as' => 'order']);
 
 Route::post('/order', ['uses' => 'HomeController@addOrder', 'as' => 'addOrder']);
+
+Route::get('/admin', ['uses' => 'HomeController@admin', 'as' => 'admin']);
+
+Route::post('/admin', ['uses' => 'HomeController@adminLogin', 'as' => 'admin']);

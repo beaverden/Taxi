@@ -138,6 +138,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,    
         Laracasts\Flash\FlashServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -197,6 +200,8 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
+        'Captcha'   => Mews\Captcha\Facades\Captcha::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
     ],
 
 ];
