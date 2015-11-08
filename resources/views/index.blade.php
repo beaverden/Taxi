@@ -50,7 +50,6 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a href="./" class="navbar-brand">Такси в Москве</a>
               </div>
               <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul style="font-weight: bold; font-family: Verdana, sans-serif;" 

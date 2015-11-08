@@ -9,12 +9,15 @@ use Auth;
 use Validator;
 use Input;
 use Redirect;
+use Firewall;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use App\Models\Crew;
 use App\Models\Comment;
 use App\Models\Order;
+
 use App\Http\Requests\CommentFormRequest;
 use App\Http\Requests\OrderFormRequest;
 use App\Http\Requests\LoginFormRequest;
@@ -23,7 +26,7 @@ class HomeController extends Controller
 {
     /**
      * 
-     * @return type array
+     * @return type view
      */
     public function index() 
     {
@@ -34,7 +37,7 @@ class HomeController extends Controller
     
     /**
      * 
-     * @return type array
+     * @return type view
      */
     public function about()
     {
@@ -47,7 +50,7 @@ class HomeController extends Controller
      * 
      * @param type $data array
      * 
-     * @return type array
+     * @return type view
      */
     public function comments()
     {
@@ -59,7 +62,7 @@ class HomeController extends Controller
     /**
      * 
      * @param CommentFormRequest $request Request
-     * @return type array
+     * @return type Redirect
      */
     public function addComment(CommentFormRequest $request) 
     {
@@ -76,7 +79,7 @@ class HomeController extends Controller
     
     /**
      * 
-     * @return type array
+     * @return type view
      */
     
     public function order() 
@@ -87,58 +90,30 @@ class HomeController extends Controller
     }
     
     /**
-     * 
-     * @return type array
+     * If the client is banned, he will be not able to order
+     * @return type Redirect
      */
     
     public function addOrder(OrderFormRequest $request) 
     {
-        $newOrder = new Order;
-        $newOrder->name = $request->get('name');
-        $newOrder->phone = $request->get('phone');
-        $newOrder->adress = $request->get('adress');
-        $newOrder->destination = $request->get('destination');
-        $newOrder->ip = $request->getClientIp();
+        $ip = $request->getClientIp();
+        $blacklisted = Firewall::isBlacklisted($ip);
+        if ($blacklisted) {
+            Flash::warning('Извините, вы были заблокированы, вы не можете оставлять заказ');
+            return Redirect::route('order');
+        } else {
+            $newOrder = new Order;
+            $newOrder->name = $request->get('name');
+            $newOrder->phone = $request->get('phone');
+            $newOrder->adress = $request->get('adress');
+            $newOrder->destination = $request->get('destination');
+            $newOrder->ip = $ip;
 
-        $newOrder->save();
-        Flash::success('Спасибо за заказ. В скором времени вам перезвонят.');
-        return Redirect::route('order');
-        
-    }
-    
-    /**
-    * Handles whether the user is logged in or not
-     * If not - sends him to login page (admin)
-     * Else - sends him to (adminPage)
-    * @return type array
-    */  
-    public function admin() 
-    {
-        if (Auth::check()) {
-            $data = ['title' => 'Диспетчер'];
-            return view('pages.adminPage')->with($data);
-        } else {
-            $data = ['title' => 'Диспетчер'];
-            return view('pages.admin')->with($data);
+            $newOrder->save();
+            Flash::success('Спасибо за заказ. В скором времени вам перезвонят.');
+            return Redirect::route('order');
         }
-           
-    }
-    /**
-     * Handles the post request to login
-      * If the authentification is successful - sends the user back to (admin) 
-      * But now logged in 
-     * @param LoginFormRequest $request
-     * @return type redirect
-     */
-    public function adminLogin(LoginFormRequest $request) {
-        $data = ['password' => Input::get('password')];
-        if (Auth::attempt($data)) {
-            Flash::message('Logged!');
-            return Redirect::route('admin');
-        } else {
-            Flash::message('Failed!');
-            return Redirect::route('admin');
-        }
+   
     }
     
 }

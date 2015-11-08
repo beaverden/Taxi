@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cf145b3129805e571a7e84daa4b909a7",
-    "content-hash": "0a843ddfb544affcabebac0d45040935",
+    "hash": "d12ce1b56dc39aa5d2ff8261324e00e9",
+    "content-hash": "56e74be3cd6d03e87e1433c3c6a31649",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -197,16 +197,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
                 "shasum": ""
             },
             "require": {
@@ -218,7 +218,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -260,7 +260,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1143,6 +1143,115 @@
                 "random"
             ],
             "time": "2015-10-23 13:21:37"
+        },
+        {
+            "name": "pragmarx/firewall",
+            "version": "v0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/firewall.git",
+                "reference": "5c0659d96a41658c05b2a93d28d6fce93d330ee6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/firewall/zipball/5c0659d96a41658c05b2a93d28d6fce93d330ee6",
+                "reference": "5c0659d96a41658c05b2a93d28d6fce93d330ee6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~4|~5",
+                "illuminate/filesystem": "~4|~5",
+                "illuminate/support": "~4|~5",
+                "php": ">=5.3.7",
+                "pragmarx/support": "~0.5"
+            },
+            "suggest": {
+                "geoip/geoip": "~1.14"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PragmaRX\\Firewall\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Carlos Ribeiro",
+                    "email": "acr@antoniocarlosribeiro.com",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A Laravel 4.1+ IP whitelisting and blacklisting",
+            "keywords": [
+                "blacklist",
+                "firewall",
+                "laravel",
+                "whitelist"
+            ],
+            "time": "2015-03-11 01:50:11"
+        },
+        {
+            "name": "pragmarx/support",
+            "version": "v0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/support.git",
+                "reference": "20e98b01b24120bb463a201509e64a5d6dd0f367"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/support/zipball/20e98b01b24120bb463a201509e64a5d6dd0f367",
+                "reference": "20e98b01b24120bb463a201509e64a5d6dd0f367",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "~4.0|~5.0",
+                "php": ">=5.4.0",
+                "symfony/var-dumper": "~2.6"
+            },
+            "suggest": {
+                "laravel/framework": "Laravel framework."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PragmaRX\\Support\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Carlos Ribeiro",
+                    "email": "acr@antoniocarlosribeiro.com",
+                    "role": "Creator"
+                }
+            ],
+            "description": "PragmaRX components support package",
+            "keywords": [
+                "laravel",
+                "pragmarx"
+            ],
+            "time": "2015-08-24 14:44:48"
         },
         {
             "name": "psr/http-message",
@@ -2232,6 +2341,50 @@
                 "test"
             ],
             "time": "2015-05-11 14:41:42"
+        },
+        {
+            "name": "laravelrus/localized-carbon",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelRUS/localized-carbon.git",
+                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
+                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laravelrus\\LocalizedCarbon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Egorov",
+                    "email": "amego2006@gmail.com"
+                }
+            ],
+            "description": "A localizable version of Carbon",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "laravel",
+                "time"
+            ],
+            "time": "2015-01-30 02:49:29"
         },
         {
             "name": "mockery/mockery",

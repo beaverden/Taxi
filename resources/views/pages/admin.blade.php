@@ -32,7 +32,7 @@
         <!-- login form -->
         <div class="col-lg-4 col-lg-offset-4 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
             <div class="form-group">@include('flash::message')</div>
-            {!! Form::open(array('action' => 'HomeController@admin')) !!}
+            {!! Form::open(array('action' => 'AdminController@admin')) !!}
             <!-- Password -->
             <div class="form-group">
                 {!! Form::label('Пароль') !!}

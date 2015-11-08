@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'Europe/Chisinau',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -141,6 +141,7 @@ return [
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        PragmaRX\Firewall\Vendor\Laravel\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -202,6 +203,7 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
         'Captcha'   => Mews\Captcha\Facades\Captcha::class,
         'Image'     => Intervention\Image\Facades\Image::class,
+        'Firewall'  => PragmaRX\Firewall\Vendor\Laravel\Facade::class,
     ],
 
 ];
