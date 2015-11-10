@@ -4,7 +4,7 @@
     <div class="container">
         
         @foreach ($orders as $order) 
-            @if ($order->status == $status)
+            @if ($order->status == $status && !Firewall::isBlackListed($order->ip))
             <div style="font-family : Verdana" class="panel panel-default">
                 <div class="panel-header">
                     <div class="text-right">
@@ -42,6 +42,9 @@
                         </li>
                         <li class="list-group-item">
                             <label class="label label-default"><b>Время заказа</b></label> <b>{{ $order->created_at }}</b>
+                        </li>
+                        <li class="list-group-item">
+                            <label class="label label-default"><b>IP адресс</b></label> <b>{{ $order->ip }}</b>
                         </li>
                     </ul>
                 </div>

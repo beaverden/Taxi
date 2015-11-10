@@ -125,7 +125,7 @@ return array(
      * Should Firewall use the database?
      */
 
-    'use_database' => false,
+    'use_database' => true,
 
     /**
     * Models

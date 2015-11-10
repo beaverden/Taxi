@@ -116,7 +116,7 @@ class AdminController extends Controller
      * 0 - active order
      * 1 - finished order
      * 2 - deleted order
-     * !! If the user is banned - his active orders won't be shown !!
+     * !! If the user is banned - his orders won't be shown !!
      */
     public function orderStatus() {
         if (Auth::check()) {

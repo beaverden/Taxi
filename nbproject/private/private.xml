@@ -5,9 +5,10 @@
         <group>
             <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/resources/views/pages/adminOrders.blade.php</file>
             <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/public/js/adminOrders.js</file>
+            <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/resources/views/pages/adminComments.blade.php</file>
+            <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/resources/views/pages/adminGeneral.blade.php</file>
             <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/app/Http/routes.php</file>
             <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/app/Http/Controllers/AdminController.php</file>
-            <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/app/Http/Controllers/HomeController.php</file>
         </group>
     </open-files>
 </project-private>

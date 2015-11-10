@@ -41,28 +41,45 @@
     
     <div class="container">
         <!-- Main menu -->
-        <div>{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</div>
+        <div>
+			<a href="/">{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</a>
+		</div>
         <div class="navbar navbar-inverse bs-docs-nav" role="banner">
               <div class="navbar-header">
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
+                  <span class="sr-only">Навигация</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
+                <a style="font-size:15px" class="navbar-brand" href="order">
+                   <b>Оставьте заказ</b> <i class="fa fa-arrow-right fa-lg"></i> 
+                </a>
               </div>
               <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul style="font-weight: bold; font-family: Verdana, sans-serif;" 
                     class="nav navbar-nav">
                   <li>
-                    <a href="about">
-                        <i class="fa fa-user fa-lg"></i> О нас
+                    <a href="order">
+                        <i class="fa fa-calendar fa-lg"></i> Заказать
                     </a>
                   </li>
                   
+				  <li>
+                    <a href="contact">
+                        <i class="fa fa-phone fa-lg"></i> Контакты
+                    </a>
+                  </li>
+				  
+				  <li>
+                    <a href="services">
+                        <i class="fa fa-plane fa-lg"></i> В Аэропорт
+                    </a>
+                  </li>
+				  
                   <li>
-                    <a href="order">
-                        <i class="fa fa-calendar fa-lg"></i> Заказать
+                    <a href="about">
+                        <i class="fa fa-user fa-lg"></i> О нас
                     </a>
                   </li>
                   
@@ -71,24 +88,13 @@
                         <i class="fa fa-cab fa-lg"></i> Услуги
                     </a>
                   </li>
-                  
-                  <li>
-                    <a href="services">
-                        <i class="fa fa-plane fa-lg"></i> В Аэропорт
-                    </a>
-                  </li>
-                  
+             
                   <li>
                     <a href="comments">
                         <i class="fa fa-comments fa-lg"></i> Отзывы
                     </a>
                   </li>
-                  
-                  <li>
-                    <a href="contact">
-                        <i class="fa fa-phone fa-lg"></i> Контакты
-                    </a>
-                  </li>
+
                 </ul>
               </nav>
         </div>

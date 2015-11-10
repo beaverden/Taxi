@@ -15,14 +15,16 @@ $(document).ready(function () {
     
     $('.block').click(function() {
         var ip = $(this).attr('data-ip');
-        
-        $.ajax({
-            url : '/admin/blockUser',
-            type : 'post',
-            data : { 'ip' : ip },
-            success : function(data) {
-                location.reload();
-            }
-        });
+        var r = confirm("Вы уверены? Заказы и отзывы этого пользователя не будут отображаться");
+        if (r == true) {
+            $.ajax({
+                url : '/admin/blockUser',
+                type : 'post',
+                data : { 'ip' : ip },
+                success : function(data) {
+                    location.reload();
+                }
+            });
+        }
     });
 });
