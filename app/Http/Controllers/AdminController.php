@@ -133,7 +133,49 @@ class AdminController extends Controller
 
     }
     /**
+     * Handles the request to adminComments page
+      * If the user is logged in - returns the view
+      * Else redirects him to login page  
+     * @return type view | Redirect
+     */
+    public function adminComments() {
+        if (Auth::check()) {
+            $data = [
+                'title' => 'Отзывы',
+                'comments' => Comment::orderBy('created_at','DESC')->paginate(10),
+            ];
+            return view('pages.adminComments')->with($data);
+        } else {
+            return Redirect::route('admin');
+        }
+        
+    }
+    /**
+     * Deletes a comment selected from adminComments
+     * @return type Redirect
+     */
+    public function deleteComment() {
+        if (Auth::check()) {
+            $id = Input::get('id', true);
+            $comment = Comment::find($id);
+            $comment->delete();
+            die;
+        }   else {
+            return Redirect::route('admin');
+        }
+    }
+    
+    public function logout() {
+        if (Auth::check()){
+            Auth::logout();
+        }
+        return Redirect::route('admin');
+    }
+
+    
+    /**
      * Inserts the given in ajax request ip to Firewall::blacklist
+     * @return type Redirect
      */
     public function blockUser() {
         if (Auth::check()) {
@@ -149,24 +191,5 @@ class AdminController extends Controller
             return Redirect::route('admin');
         }
     }
-    /**
-     * Handles the request to adminComments page
-      * If the user is logged in - returns the view
-      * Else redirects him to login page  
-     * @return type view | Redirect
-     */
-    public function adminComments() {
-        if (Auth::check()) {
-            $data = [
-                'title' => 'Отзывы',
-                'comments' => Comment::paginate(10),
-            ];
-            return view('pages.adminComments')->with($data);
-        } else {
-            return Redirect::route('admin');
-        }
-        
-    }
-
 }
    

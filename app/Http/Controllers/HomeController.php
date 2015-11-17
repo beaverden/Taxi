@@ -48,8 +48,6 @@ class HomeController extends Controller
     }
     /**
      * 
-     * @param type $data array
-     * 
      * @return type view
      */
     public function comments()
@@ -60,21 +58,33 @@ class HomeController extends Controller
         return view('pages.comments')->with($data);
     }
     /**
-     * 
+     * If the user is blocked - he is not able to leave a comment
      * @param CommentFormRequest $request Request
      * @return type Redirect
      */
     public function addComment(CommentFormRequest $request) 
     {
-        $newMessage = new Comment;
-        $newMessage->comment = $request->get('comment');       
-        $newMessage->name = $request->get('name');
-        $newMessage->email = $request->get('email');
+        $ip = $request->getClientIp();
+        $blacklisted = Firewall::isBlacklisted($ip);
+        if ($blacklisted) {
+            
+            Flash::warning('Вы были заблокированы, вы не можете оставлять отзывы');
+            return Redirect::route('comments');  
+            
+        } else {
+            
+            $newMessage = new Comment;
+            $newMessage->comment = $request->get('comment');       
+            $newMessage->name = $request->get('name');
+            $newMessage->email = $request->get('email');
+            $newMessage->ip = $ip;
+
+            $newMessage->save();
+
+            Flash::success('Спасибо за ваш отзыв.');
+            return Redirect::route('comments');
+        }
         
-        $newMessage->save();
-        
-        Flash::success('Спасибо за ваш отзыв.');
-        return Redirect::route('comments');
     }
     
     /**

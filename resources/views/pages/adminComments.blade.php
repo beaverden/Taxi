@@ -3,11 +3,12 @@
 
 <div class="container">
     @foreach ($comments as $comment) 
+        @if (!Firewall::isBlackListed($comment->ip))
         <div style="font-family : Verdana" class="panel panel-default">
                 <div class="panel-header">
                     <div class="text-right">
-                        <button id="{{ $comment->id }}" data-status="2" title="Удалить" style="margin-right:3px; margin-top:3px;" class="btn btn-warning status"><i class="fa fa-close"></i></button>
-                        <button id="{{ $comment->id }}" data-ip="{{ $comment->ip }}" title="Заблокировать пользователя" style="margin-right:3px; margin-top:3px;" class="btn btn-danger block"><i class="fa fa-ban"></i></button>
+                        <button class="btn btn-warning delete" data-id="{{ $comment->id }}" title="Удалить" style="margin-right:3px; margin-top:3px;" ><i class="fa fa-close"></i></button>
+                        <button class="btn btn-danger block" data-ip="{{ $comment->ip }}" title="Заблокировать пользователя" style="margin-right:3px; margin-top:3px;" ><i class="fa fa-ban"></i></button>
                     </div> 
                 </div>
                 <div class="panel-body">
@@ -30,10 +31,13 @@
                     </ul>
                 </div>
             </div>
+        @endif
     @endforeach
     <div class="text-center">
         {!! $comments->render() !!}
     </div>
+    
+    {!! Html::script('js/adminComments.js') !!}
 </div>
 
 @stop

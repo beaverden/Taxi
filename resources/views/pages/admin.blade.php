@@ -36,13 +36,13 @@
             <!-- Password -->
             <div class="form-group">
                 {!! Form::label('Пароль') !!}
-                {!! Form::text('password', null, 
+                {!! Form::password('password', 
                     array('required', 
-                          'class'=>'form-control', 
+                          'class' => 'form-control', 
                           'placeholder' => 'Пароль',
                           'maxlength' => '50')) !!}
             </div>
-            <!-- Password -->
+            <!-- /. Password -->
 
             <!-- Captcha -->
             <div class="form-group " >

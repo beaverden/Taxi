@@ -68,8 +68,15 @@
                 </div>
             </a>
             <a href="/admin/general">
-                <div class="col col-lg-2 span4 menuitem">
-                    <i class="fa fa-cog fa-lg"></i> Общее
+                <div class="col col-lg-1 menuitem" title="Общие настройки">
+                    <i class="fa fa-cog fa-lg"></i>
+                    <span class="hidden-lg"> Общее<span>
+                </div>
+            </a>
+            <a href="/admin/exit">
+                <div class="col col-lg-1 span4 menuitem" title="Выйти">
+                    <i class="fa fa-chain-broken fa-lg"></i>
+                    <span class="hidden-lg"> Выйти<span>
                 </div>
             </a>
         </div>
