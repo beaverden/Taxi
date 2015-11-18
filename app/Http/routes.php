@@ -54,6 +54,10 @@
         Route::get('admin/general/password', ['uses' => 'AdminSettingsController@generalPassword', 'as' => 'generalPassword']);
         
         Route::post('admin/general/password', ['uses' => 'AdminSettingsController@changePassword', 'as' => 'changePassword']);
+    
+        Route::get('admin/general/blocked', ['uses' => 'AdminSettingsController@blocked', 'as' => 'blocked']);
+        
+        Route::post('admin/general/blocked', ['uses' => 'AdminSettingsController@removeBlocked', 'as' => 'removeBlocked']);
     /** /.GENERAL **/   
         
         

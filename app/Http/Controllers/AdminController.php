@@ -183,7 +183,7 @@ class AdminController extends Controller
             //Adds the given ip to blacklist
             $blacklisted = Firewall::isBlacklisted($ip);
             if (!$blacklisted) {
-                Firewall::blacklist($ip);
+                Firewall::blacklist($ip, true);
             }
    
             die;
