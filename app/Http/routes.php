@@ -22,6 +22,8 @@
         Route::get('order', ['uses' => 'HomeController@order', 'as' => 'order']);
 
         Route::post('order', ['uses' => 'HomeController@addOrder', 'as' => 'addOrder']);
+        
+        Route::get('contacts', ['uses' => 'HomeController@contacts', 'as' => 'contacts']);
 /** /.HOME CONTROLLER **/
     
 /** ADMIN CONTROLLER **/
@@ -48,7 +50,7 @@
     /** /.COMMENTS **/
 
 
-    /** GENERAL **/
+    /** GENERAL  SETTINGS**/
         Route::get('admin/general', ['uses' => 'AdminSettingsController@adminGeneral', 'as' => 'adminGeneral']);
         
         Route::get('admin/general/password', ['uses' => 'AdminSettingsController@generalPassword', 'as' => 'generalPassword']);
@@ -58,7 +60,10 @@
         Route::get('admin/general/blocked', ['uses' => 'AdminSettingsController@blocked', 'as' => 'blocked']);
         
         Route::post('admin/general/blocked', ['uses' => 'AdminSettingsController@removeBlocked', 'as' => 'removeBlocked']);
-    /** /.GENERAL **/   
+    
+        Route::get('admin/general/changeContacts', ['uses' => 'AdminSettingsController@changeContacts', 'as' => 'changeContacts']);
+        
+    /** /.GENERAL SETTINGS**/   
         
         
         Route::post('admin/blockUser', ['uses' => 'AdminController@blockUser', 'as' => 'blockUser']);

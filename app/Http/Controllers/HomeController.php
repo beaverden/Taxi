@@ -17,6 +17,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Crew;
 use App\Models\Comment;
 use App\Models\Order;
+use App\Models\Contact;
 
 use App\Http\Requests\CommentFormRequest;
 use App\Http\Requests\OrderFormRequest;
@@ -31,7 +32,7 @@ class HomeController extends Controller
     public function index() 
     {
         $data = ['title' => 'Такси в Москве',
-                'number' => '0-797-707-707'];
+                'number' => Contact::find(1)->tel];
         return view('pages.index')->with($data);
     }
     
@@ -42,7 +43,7 @@ class HomeController extends Controller
     public function about()
     {
         $data = ['title' => 'О нас',
-                'number' => '0-797-707-707',
+                'number' => Contact::find(1)->tel,
                 'crew' => Crew::all()];
         return view('pages.about')->with($data);
     }
@@ -53,7 +54,7 @@ class HomeController extends Controller
     public function comments()
     {
         $data = ['title' => 'Отзывы',
-                'number' => '0-797-707-707',
+                'number' => Contact::find(1)->tel,
                 'comments' => Comment::paginate(10)];
         return view('pages.comments')->with($data);
     }
@@ -95,7 +96,7 @@ class HomeController extends Controller
     public function order() 
     {
         $data = ['title' => 'Заказ',
-                 'number' => '0-797-707-707'];
+                 'number' => Contact::find(1)->tel];
         return view('pages.order')->with($data);
     }
     
@@ -126,5 +127,15 @@ class HomeController extends Controller
    
     }
     
+    /**
+     * Returns contacts.blade.php page
+     * @return type view
+     */
+    public function contacts() {
+        $data = ['title' => 'Заказ',
+                 'number' => Contact::find(1)->tel,
+                 'contacts' => Contact::all()];
+        return view('pages.contacts')->with($data);
+    }
 }
    

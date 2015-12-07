@@ -48,6 +48,7 @@
     
     
     @foreach ($comments as $comment) 
+        @if (!Firewall::isBlacklisted($comment->ip))
         <div id="{{ $comment->id }}" class="media well">
             <div class="media-body">
                 <h4 class="media-heading">{{$comment->name}}   
@@ -56,6 +57,7 @@
               {{$comment->comment}}
             </div>
           </div>
+        @endif
     @endforeach
     
     

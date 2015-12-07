@@ -18,6 +18,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Order;
 use App\Models\Blocked;
+use App\Models\Contact;
 
 use App\Http\Requests\ChangePasswordRequest;
 
@@ -84,7 +85,8 @@ class AdminSettingsController extends Controller
      * Returns blocked ips page
      * @return type view
      */
-    public function blocked() {
+    public function blocked() 
+    {
         if (Auth::check()) 
         {
             $data = [
@@ -99,7 +101,12 @@ class AdminSettingsController extends Controller
         
     }
     
-    public function removeBlocked() {
+    /**
+     * Removes a blocked ip. Makes it whitelisted
+     * @return type Redirect
+     */
+    public function removeBlocked() 
+    {
         if (Auth::check()) 
         {
             $ip = Input::get('ip');
@@ -111,6 +118,21 @@ class AdminSettingsController extends Controller
             return Redirect::route('admin');
         }
         
+    }
+    
+    public function changeContacts() 
+    {
+        if (Auth::check()) 
+        {
+            $data = [
+                'title' => 'Список контактов',
+                'contacts' => Contact::all(),
+            ];
+           return view('pages.options.changeContacts')->with($data);
+        } else 
+        {
+            return Redirect::route('admin');
+        }
     }
     
 }
