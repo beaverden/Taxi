@@ -51,8 +51,10 @@
 
 
     /** GENERAL  SETTINGS**/
+        
         Route::get('admin/general', ['uses' => 'AdminSettingsController@adminGeneral', 'as' => 'adminGeneral']);
         
+        /** PASSWORD **/
         Route::get('admin/general/password', ['uses' => 'AdminSettingsController@generalPassword', 'as' => 'generalPassword']);
         
         Route::post('admin/general/password', ['uses' => 'AdminSettingsController@changePassword', 'as' => 'changePassword']);
@@ -60,8 +62,27 @@
         Route::get('admin/general/blocked', ['uses' => 'AdminSettingsController@blocked', 'as' => 'blocked']);
         
         Route::post('admin/general/blocked', ['uses' => 'AdminSettingsController@removeBlocked', 'as' => 'removeBlocked']);
-    
+        /** /.PASSWORD **/
+        
+        /** CONTACTS **/
         Route::get('admin/general/changeContacts', ['uses' => 'AdminSettingsController@changeContacts', 'as' => 'changeContacts']);
+        
+        Route::post('admin/general/saveContact', ['uses' => 'AdminSettingsController@saveContact', 'as' => 'saveContact']);
+        
+        Route::post('admin/general/addContact', ['uses' => 'AdminSettingsController@addContact', 'as' => 'addContact']);
+        
+        Route::post('admin/general/deleteContact', ['uses' => 'AdminSettingsController@deleteContact', 'as' => 'deleteContact']);
+        /** /.CONTACTS **/
+        
+        /** CREW **/
+        Route::get('admin/general/changeCrew', ['uses' => 'AdminSettingsController@changeCrew', 'as' => 'changeCrew']);
+         
+        Route::post('admin/general/addMember', ['uses' => 'AdminSettingsController@addMember', 'as' => 'addMember']);
+        
+        Route::post('admin/general/saveMember', ['uses' => 'AdminSettingsController@saveMember', 'as' => 'saveMember']);
+        
+        Route::post('admin/general/deleteMember', ['uses' => 'AdminSettingsController@deleteMember', 'as' => 'deleteMember']);
+        /** /.CREW **/
         
     /** /.GENERAL SETTINGS**/   
         
