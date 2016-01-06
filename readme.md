@@ -23,6 +23,19 @@
   * Adding and deleting a team-member, as well as editing it's information and photo.
   * Changing the password (which is "12345" by default).
 
+## Elementary functionality included
+* Server and client-side coding
+* MVC relationships
+* Working with Blade templates
+* Ajax requests and JQuery usage (colleting data, toggling, event-listening)
+* Simple authentification and login
+* Working and processing forms and requests
+* Working with a MySQL database (adding, deleting, updating)
+* Usage of PHP language primitives
+* Picture loading to the server
+* Full mobile and desktop support
+* Bootstrap CSS, Font Awesome CSS, written CSS
+* HTML5 usage (metadata, titles)
 
 ##Laravel PHP Framework
 
