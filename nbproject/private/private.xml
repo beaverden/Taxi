@@ -3,10 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/public/js/adminCrew.js</file>
-            <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/app/Http/routes.php</file>
             <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/app/Http/Controllers/AdminSettingsController.php</file>
-            <file>file:/E:/Programming/PHP/XAMPP/htdocs/laravel/taxi/resources/views/pages/options/changeCrew.blade.php</file>
         </group>
     </open-files>
 </project-private>

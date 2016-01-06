@@ -12,12 +12,6 @@
     
     </br></br>
     
-    <div class="text-center ">
-        <h2 style="font-family: Verdana, sans-serif">Чем мы занимаемся?</h2>      
-        <div style="padding-bottom: 10px">{!! Html::image("http://katzglassdesign.com/blog/wp-content/uploads/2012/03/line-break.png",'',['class'=>'img-responsive center-block']) !!}</div>
-        <span class="glyphicon glyphicon-ok"></span>
-        Предоставляем <a href="services">широкий спектр услуг </a>
-      </div>
     
     </br></br>
     

@@ -37,7 +37,7 @@ class AdminController extends Controller
             return Redirect::route('adminOrders');
         } else {
             $data = ['title' => 'Диспетчер'];
-            return view('pages.admin')->with($data);
+            return view('pages.mainAdminPages.admin')->with($data);
         }
            
     }
@@ -70,7 +70,7 @@ class AdminController extends Controller
                 'orders' => Order::paginate(10),
                 'status' => 0,
             ];
-            return view('pages.adminOrders')->with($data);
+            return view('pages.mainAdminPages.adminOrders')->with($data);
         } else {
             return Redirect::route('admin');
         }
@@ -87,7 +87,7 @@ class AdminController extends Controller
                 'orders' => Order::paginate(10),
                 'status' => 1,
             ];
-            return view('pages.adminOrders')->with($data);
+            return view('pages.mainAdminPages.adminOrders')->with($data);
         } else {
             return Redirect::route('admin');
         }
@@ -104,7 +104,7 @@ class AdminController extends Controller
                 'orders' => Order::paginate(10),
                 'status' => 2,
             ];
-            return view('pages.adminOrders')->with($data);
+            return view('pages.mainAdminPages.adminOrders')->with($data);
         } else {
             return Redirect::route('admin');
         }
@@ -144,7 +144,7 @@ class AdminController extends Controller
                 'title' => 'Отзывы',
                 'comments' => Comment::orderBy('created_at','DESC')->paginate(10),
             ];
-            return view('pages.adminComments')->with($data);
+            return view('pages.mainAdminPages.adminComments')->with($data);
         } else {
             return Redirect::route('admin');
         }

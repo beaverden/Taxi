@@ -33,7 +33,7 @@ class HomeController extends Controller
     {
         $data = ['title' => 'Такси в Москве',
                 'number' => Contact::find(1)->tel];
-        return view('pages.index')->with($data);
+        return view('pages.mainUserPages.index')->with($data);
     }
     
     /**
@@ -45,7 +45,7 @@ class HomeController extends Controller
         $data = ['title' => 'О нас',
                 'number' => Contact::find(1)->tel,
                 'crew' => Crew::all()];
-        return view('pages.about')->with($data);
+        return view('pages.mainUserPages.about')->with($data);
     }
     /**
      * 
@@ -56,7 +56,7 @@ class HomeController extends Controller
         $data = ['title' => 'Отзывы',
                 'number' => Contact::find(1)->tel,
                 'comments' => Comment::paginate(10)];
-        return view('pages.comments')->with($data);
+        return view('pages.mainUserPages.comments')->with($data);
     }
     /**
      * If the user is blocked - he is not able to leave a comment
@@ -97,7 +97,7 @@ class HomeController extends Controller
     {
         $data = ['title' => 'Заказ',
                  'number' => Contact::find(1)->tel];
-        return view('pages.order')->with($data);
+        return view('pages.mainUserPages.order')->with($data);
     }
     
     /**
@@ -135,7 +135,7 @@ class HomeController extends Controller
         $data = ['title' => 'Заказ',
                  'number' => Contact::find(1)->tel,
                  'contacts' => Contact::all()];
-        return view('pages.contacts')->with($data);
+        return view('pages.mainUserPages.contacts')->with($data);
     }
 }
    

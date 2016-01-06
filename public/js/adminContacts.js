@@ -48,18 +48,22 @@ $(document).ready(function () {
     $('.savenew').click(function() {
         var newTel = $('#addTel').val();
         var newInfo = $('#addInfo').val();
+        if (newTel.length > 0 && newInfo.length > 0) {
+            $.ajax({
+                url : '/admin/general/addContact',
+                type : 'post',
+                data : { 
+                    'number' : newTel,
+                    'info' : newInfo
+                },
+                success : function(data) {  
+                    location.reload();
+                }
+            });  
+        } else {
+            alert('Fill all the fields');
+        }
         
-        $.ajax({
-            url : '/admin/general/addContact',
-            type : 'post',
-            data : { 
-                'number' : newTel,
-                'info' : newInfo
-            },
-            success : function(data) {  
-                location.reload();
-            }
-        });
         
     });
     
