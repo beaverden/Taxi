@@ -1,15 +1,17 @@
 
 
 ## Tools used
-<ul>
-  <li> [Bootstrap 3.3.5](http://getbootstrap.com)  </li>
-  <li> [Font Awesome Icons](https://fortawesome.github.io/Font-Awesome/) </li>
-  <li> [Laravel PHP Framework](https://laravel.com/) </li>
-</ul>
+*[Bootstrap 3.3.5](http://getbootstrap.com)
+
+*[Font Awesome Icons](https://fortawesome.github.io/Font-Awesome/)
+
+*[Laravel PHP Framework](https://laravel.com/)
 
 
 
-Laravel PHP Framework
+
+##Laravel PHP Framework
+
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
