@@ -1,13 +1,25 @@
 
 
 ## Tools used
-*[Bootstrap 3.3.5](http://getbootstrap.com)
+* [Bootstrap 3.3.5](http://getbootstrap.com)
 
-*[Font Awesome Icons](https://fortawesome.github.io/Font-Awesome/)
+* [Font Awesome Icons](https://fortawesome.github.io/Font-Awesome/)
 
-*[Laravel PHP Framework](https://laravel.com/)
+* [Laravel PHP Framework](https://laravel.com/)
 
+## Features Provided
+* The main page listing general information about the site
+* /order page offering the user the possibility to leave an order
+* /contacts page that lists all the needed contacts
+* /comments page where users can leave their opinion about the service
+* /about page providing short information about the team
 
+* The site also has /admin page, where you can login and manipulate with the content on the pages listed above
+  * Moving, completing, deleting user orders
+  * Blocking/Unblocking a certain user
+  * Deleting a certain comment
+  * Adding, editing, deleting the contacts list
+  * Adding and deleting a team-member, as well as editing it's information and photo.
 
 
 ##Laravel PHP Framework
