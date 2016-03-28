@@ -14,6 +14,7 @@
 3. **Run** `composer update`
 4. **Rename** the `.env.example` file to `.env` (if it doesn't exist already)
 5. **Run** `php artisan key:generate`, **copy** the key into `.env` after `APP_KEY=`
+6. **Create** a database named Taxi (name, login, password can be changed in `.env` file)
 6. **Import** the Dabase `export.sql`
 6. Now the project should be ready to go
 7. The default password to the /admin page is "12345"
