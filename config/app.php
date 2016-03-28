@@ -1,7 +1,9 @@
 <?php
 
 return [
-
+    
+    'env' => env('APP_ENV', 'production'),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -12,7 +14,7 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
-
+    
     'debug' => env('APP_DEBUG', false),
 
     /*
