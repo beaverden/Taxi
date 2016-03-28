@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Дамп данных таблицы taxi.admin: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 INSERT INTO `admin` (`id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, '$2y$10$Yj2nDc1Qd9pGMyJVJGyP..mZsM5V2M43wI8LpKIi0Ucl2C3b5x4Ti', '8zQbkZxLapdkrJ6agIu6mGZKzo49qGBrZU3MP9YYaZmbWfgJ1tJDPnp455AV', '0000-00-00 00:00:00', '2015-11-17 22:12:26');
+	(1, '$2y$10$Yj2nDc1Qd9pGMyJVJGyP..mZsM5V2M43wI8LpKIi0Ucl2C3b5x4Ti', 'sGftiRlfEceyBKf1OoNeVN49PQZSlsTspNAiXt0OL5FPf3EKU66X7x6eyNMU', '0000-00-00 00:00:00', '2016-01-06 19:33:31');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 
@@ -42,12 +42,12 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы taxi.comments: ~1 rows (приблизительно)
+-- Дамп данных таблицы taxi.comments: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
 INSERT INTO `comments` (`id`, `comment`, `name`, `email`, `ip`, `created_at`, `updated_at`) VALUES
-	(24, 'Тест', 'Телефон', '', '192.168.0.100', '2015-11-13 17:49:20', '2015-11-13 17:49:20');
+	(25, 'It\'s cool!', 'Ivan', '', '127.0.0.1', '2016-03-28 13:04:40', '2016-03-28 13:04:40');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 
 
@@ -64,10 +64,10 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 -- Дамп данных таблицы taxi.contacts: ~4 rows (приблизительно)
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
 INSERT INTO `contacts` (`id`, `tel`, `info`, `created_at`, `updated_at`) VALUES
-	(1, '0-797-707-704', 'Диспетчер', '0000-00-00 00:00:00', '2015-12-13 20:14:34'),
-	(5, '911', 'Скорая помощь', '2015-12-13 20:42:35', '2015-12-13 20:42:35'),
-	(6, '123', 'Улица Пушкина', '2015-12-19 18:09:46', '2015-12-19 18:09:46'),
-	(7, '321', 'Дом Колотушкина', '2015-12-19 18:10:06', '2015-12-19 18:10:06');
+	(1, '0-797-707-704', 'Dispatcher', '0000-00-00 00:00:00', '2015-12-13 20:14:34'),
+	(5, '911', 'Ambulance', '2015-12-13 20:42:35', '2015-12-13 20:42:35'),
+	(6, '123', 'Sample street', '2015-12-19 18:09:46', '2015-12-19 18:09:46'),
+	(7, '321', 'Sample house', '2015-12-19 18:10:06', '2015-12-19 18:10:06');
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 
 
@@ -80,14 +80,13 @@ CREATE TABLE IF NOT EXISTS `crew` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы taxi.crew: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `crew` DISABLE KEYS */;
 INSERT INTO `crew` (`id`, `name`, `photo`, `info`, `created_at`, `updated_at`) VALUES
-	(1, 'Иван Иванов', '/img/photos/images.jpg', 'Стаж работы - 5 лет.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(3, 'Иван Иванов', '/img/photos/images.jpg', 'Стаж работы - 5 лет.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(10, 'Денис', '/img/photos/1450554050.jpg', 'Не делает сайт', '2015-12-19 22:23:15', '2015-12-19 22:40:50');
+	(1, 'Ivan Ivanov', '/img/photos/images.jpg', 'Work experience - 5 years.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(3, 'Vodka Balalayka', '/img/photos/images.jpg', 'Work experience - 5 years.', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `crew` ENABLE KEYS */;
 
 
@@ -104,9 +103,6 @@ CREATE TABLE IF NOT EXISTS `firewall` (
 
 -- Дамп данных таблицы taxi.firewall: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `firewall` DISABLE KEYS */;
-INSERT INTO `firewall` (`id`, `ip_address`, `whitelisted`, `created_at`, `updated_at`) VALUES
-	(4, '127.0.0.1', 1, '2015-11-18 21:00:44', '2015-11-18 21:00:44'),
-	(8, '192.168.0.100', 1, '2015-12-04 20:42:03', '2015-12-04 20:42:03');
 /*!40000 ALTER TABLE `firewall` ENABLE KEYS */;
 
 
@@ -147,19 +143,12 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы taxi.orders: ~8 rows (приблизительно)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`id`, `name`, `phone`, `adress`, `destination`, `status`, `ip`, `created_at`, `updated_at`) VALUES
-	(3, 'Денис', '12345', 'Рейхстаг', 'Москва', 1, '127.0.0.1', '2015-11-04 21:34:15', '2015-11-10 22:16:08'),
-	(4, 'Дани', '12345', 'Город', 'Город', 0, '192.168.0.100', '2015-11-04 22:18:49', '2015-11-08 16:51:48'),
-	(5, 'Алана', '12345', 'Город', 'Город', 0, '192.168.0.100', '2015-11-04 22:23:26', '2015-11-08 16:23:01'),
-	(6, 'Бан', '12345', 'Город', 'Город', 0, '192.168.0.100', '2015-11-08 19:05:30', '2015-11-08 19:05:30'),
-	(7, 'Бан', '12345', 'Город', 'Город', 0, '192.168.0.100', '2015-11-08 19:06:47', '2015-11-08 19:06:47'),
-	(8, 'Бан', '12345', 'Город', 'Город', 0, '192.168.0.100', '2015-11-08 19:07:57', '2015-11-08 19:07:57'),
-	(9, 'Бан', '12345', 'Город', 'Город', 0, '192.168.0.100', '2015-11-08 19:09:35', '2015-11-08 19:09:35'),
-	(10, 'Бан', '12345', 'А', 'Б', 0, '127.0.0.1', '2015-11-08 19:17:07', '2015-11-08 19:17:07');
+	(12, 'Sample name', '123456', 'Hollywood', 'Hell', 0, '127.0.0.1', '2016-03-28 13:08:44', '2016-03-28 13:08:44');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

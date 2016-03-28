@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Flash;
-use Session;
-use Auth;
-use Validator;
-use Input;
 use Redirect;
 use Firewall;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Crew;
@@ -21,7 +15,6 @@ use App\Models\Contact;
 
 use App\Http\Requests\CommentFormRequest;
 use App\Http\Requests\OrderFormRequest;
-use App\Http\Requests\LoginFormRequest;
 
 class HomeController extends Controller
 {
@@ -31,8 +24,8 @@ class HomeController extends Controller
      */
     public function index() 
     {
-        $data = ['title' => 'Такси в Москве',
-                'number' => Contact::find(1)->tel];
+        $data = ['title' => 'Taxi',
+                 'number' => Contact::find(1)->tel];
         return view('pages.mainUserPages.index')->with($data);
     }
     
@@ -42,7 +35,7 @@ class HomeController extends Controller
      */
     public function about()
     {
-        $data = ['title' => 'О нас',
+        $data = ['title' => 'About us',
                 'number' => Contact::find(1)->tel,
                 'crew' => Crew::all()];
         return view('pages.mainUserPages.about')->with($data);
@@ -53,7 +46,7 @@ class HomeController extends Controller
      */
     public function comments()
     {
-        $data = ['title' => 'Отзывы',
+        $data = ['title' => 'Comments',
                 'number' => Contact::find(1)->tel,
                 'comments' => Comment::paginate(10)];
         return view('pages.mainUserPages.comments')->with($data);
@@ -69,7 +62,7 @@ class HomeController extends Controller
         $blacklisted = Firewall::isBlacklisted($ip);
         if ($blacklisted) {
             
-            Flash::warning('Вы были заблокированы, вы не можете оставлять отзывы');
+            Flash::warning('Sorry, you have been blocked and you can\'t leave comments right now');
             return Redirect::route('comments');  
             
         } else {
@@ -82,20 +75,20 @@ class HomeController extends Controller
 
             $newMessage->save();
 
-            Flash::success('Спасибо за ваш отзыв.');
+            Flash::success('Thank you for your opinion!');
             return Redirect::route('comments');
         }
         
     }
     
     /**
-     * 
+     * Returns the order page
      * @return type view
      */
     
     public function order() 
     {
-        $data = ['title' => 'Заказ',
+        $data = ['title' => 'Order',
                  'number' => Contact::find(1)->tel];
         return view('pages.mainUserPages.order')->with($data);
     }
@@ -110,7 +103,7 @@ class HomeController extends Controller
         $ip = $request->getClientIp();
         $blacklisted = Firewall::isBlacklisted($ip);
         if ($blacklisted) {
-            Flash::warning('Извините, вы были заблокированы, вы не можете оставлять заказ');
+            Flash::warning('Sorry, you have been blocked and you can\'t order right now');
             return Redirect::route('order');
         } else {
             $newOrder = new Order;
@@ -121,7 +114,7 @@ class HomeController extends Controller
             $newOrder->ip = $ip;
 
             $newOrder->save();
-            Flash::success('Спасибо за заказ. В скором времени вам перезвонят.');
+            Flash::success('Thank you for your order!');
             return Redirect::route('order');
         }
    
@@ -132,7 +125,7 @@ class HomeController extends Controller
      * @return type view
      */
     public function contacts() {
-        $data = ['title' => 'Заказ',
+        $data = ['title' => 'Contacts',
                  'number' => Contact::find(1)->tel,
                  'contacts' => Contact::all()];
         return view('pages.mainUserPages.contacts')->with($data);

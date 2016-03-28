@@ -42,18 +42,18 @@
     <div class="container">
         <!-- Main menu -->
         <div>
-			<a href="/">{!! Html::image('img/taxilogo.png', 'logo', array('class' => 'img-responsive center-block')) !!}</a>
+			<a href="/">{!! Html::image('img/taxilogo.png', 'Site logo, a taxi', array('class' => 'img-responsive center-block')) !!}</a>
 		</div>
         <div class="navbar navbar-inverse bs-docs-nav" role="banner">
               <div class="navbar-header">
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                  <span class="sr-only">Навигация</span>
+                  <span class="sr-only">Navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
                 <a style="font-size:15px" class="navbar-brand" href="order">
-                   <b>Оставьте заказ</b> <i class="fa fa-arrow-right fa-lg"></i> 
+                   <b>Leave an order</b> <i class="fa fa-arrow-right fa-lg"></i> 
                 </a>
               </div>
               <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -61,25 +61,25 @@
                     class="nav navbar-nav">
                     <li>
                       <a href="order">
-                          <i class="fa fa-calendar fa-lg"></i> Заказать
+                          <i class="fa fa-calendar fa-lg"></i> Order
                       </a>
                     </li>
 
                     <li>
                       <a href="contacts">
-                          <i class="fa fa-phone fa-lg"></i> Контакты
+                          <i class="fa fa-phone fa-lg"></i> Contacts
                       </a>
                     </li>
 
                     <li>
                       <a href="about">
-                          <i class="fa fa-user fa-lg"></i> О нас
+                          <i class="fa fa-user fa-lg"></i> About us
                       </a>
                     </li>
 
                     <li>
                       <a href="comments">
-                          <i class="fa fa-comments fa-lg"></i> Отзывы
+                          <i class="fa fa-comments fa-lg"></i> Comments
                       </a>
                     </li>
 
@@ -97,7 +97,7 @@
                     <!-- /.Contacts -->
 
                         <span style="font-size: 18px; " class="label label-success" >
-                        <span class="glyphicon glyphicon-earphone"></span> Позвоните нам</span>  
+                        <span class="glyphicon glyphicon-earphone"></span> Call us</span>  
                     </a> 
                 </div>
                 <div>
@@ -105,7 +105,7 @@
                 <span style="font-size:18px;" class="badge">
                     <a style="text-decoration: none; color: #222" href="tel:{{ $number }}">{{ $number }}</a>
                 </span>
-                {!! Html::image('img/ru.png', 'ruflag', array('class' => 'img')) !!}
+                {!! Html::image('img/ru.png', 'russian flag', array('class' => 'img')) !!}
                 <!-- /.Phone number and the flag -->
                 </div>
             </div>

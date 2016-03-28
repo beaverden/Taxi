@@ -33,10 +33,10 @@ class AdminController extends Controller
     public function admin() 
     {
         if (Auth::check()) {
-            $data = ['title' => 'Диспетчер'];
+            $data = ['title' => 'Dispatcher'];
             return Redirect::route('adminOrders');
         } else {
-            $data = ['title' => 'Диспетчер'];
+            $data = ['title' => 'Dispatcher'];
             return view('pages.mainAdminPages.admin')->with($data);
         }
            
@@ -53,12 +53,12 @@ class AdminController extends Controller
         if (Auth::attempt($data)) {
             return Redirect::route('adminOrders');
         } else {
-            Flash::message('Ошибка, попробуйте снова');
+            Flash::message('There was an error, please try again');
             return Redirect::route('admin');
         }
     }
     /**
-     * Handles the request to /admin/orders/ pages
+     * Handles the request to /admin/orders/pages
       * If the user is logged in - returns the view
       * Else redirects him to login page  
      * @return type view | Redirect
@@ -66,7 +66,7 @@ class AdminController extends Controller
     public function adminOrders() {
         if (Auth::check()) {
             $data = [
-                'title' => 'Заказы',
+                'title' => 'Orders',
                 'orders' => Order::paginate(10),
                 'status' => 0,
             ];
@@ -77,13 +77,13 @@ class AdminController extends Controller
         
     }
     /**
-     * Returns view with status 1, showing only done orders
+     * Returns view with status 1, showing only finished orders
      * @return type view | Redirect
      */
     public function ordersDone() {
         if (Auth::check()) {
             $data = [
-                'title' => 'Выполненные заказы',
+                'title' => 'Finished orders',
                 'orders' => Order::paginate(10),
                 'status' => 1,
             ];
@@ -94,13 +94,13 @@ class AdminController extends Controller
       
     }
     /**
-     * Returns view with status 2, showing only erased orders
+     * Returns view with status 2, showing only deleted orders
      * @return type view | Redirect
      */
     public function ordersErased() {
         if (Auth::check()) {
             $data = [
-                'title' => 'Удаленные заказы',
+                'title' => 'Deleted orders',
                 'orders' => Order::paginate(10),
                 'status' => 2,
             ];
@@ -141,7 +141,7 @@ class AdminController extends Controller
     public function adminComments() {
         if (Auth::check()) {
             $data = [
-                'title' => 'Отзывы',
+                'title' => 'Comments',
                 'comments' => Comment::orderBy('created_at','DESC')->paginate(10),
             ];
             return view('pages.mainAdminPages.adminComments')->with($data);
@@ -174,7 +174,7 @@ class AdminController extends Controller
 
     
     /**
-     * Inserts the given in ajax request ip to Firewall::blacklist
+     * Inserts the given in the ajax request ip to Firewall::blacklist
      * @return type Redirect
      */
     public function blockUser() {

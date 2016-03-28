@@ -35,11 +35,11 @@
             {!! Form::open(array('action' => 'AdminController@admin')) !!}
             <!-- Password -->
             <div class="form-group">
-                {!! Form::label('Пароль') !!}
+                {!! Form::label('Password') !!}
                 {!! Form::password('password', 
                     array('required', 
                           'class' => 'form-control', 
-                          'placeholder' => 'Пароль',
+                          'placeholder' => 'Password',
                           'maxlength' => '50')) !!}
             </div>
             <!-- /. Password -->
@@ -57,7 +57,7 @@
             <!-- /.Captcha -->
 
             <div class="form-group">
-                {!! Form::submit('Войти', 
+                {!! Form::submit('Enter!', 
                   array('class' => 'btn btn-success')) !!}
             </div>
 

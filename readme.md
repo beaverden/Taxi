@@ -29,7 +29,6 @@
 * Working with Blade templates
 * Ajax requests and JQuery usage (colleting data, toggling, event-listening)
 * Simple authentification and login
-* Captcha test
 * Working and processing forms and requests
 * Working with a MySQL database (adding, deleting, updating)
 * Usage of PHP language primitives

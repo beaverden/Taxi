@@ -5,42 +5,42 @@
     
     @include('flash::message')
     
-    <h2 class="page-header">Оставьте отзыв</h2>
+    <h2 class="page-header">Leave a comment</h2>
     <!-- Comment form -->
     {!! Form::open(array('action' => 'HomeController@addComment', 'role' => 'form')) !!}
         <!-- Email -->
         <div class="form-group">
-            {!! Form::label('Адресс электронной почты') !!}
+            {!! Form::label('Email Adress') !!}
             {!! Form::email('email', null, 
                 array('class' => 'form-control', 
-                      'placeholder' => 'Не обязательно',
+                      'placeholder' => 'Not necessary',
                       'maxlength' => '50')) !!}
         </div>
         <!-- /.Email -->
         <!-- Name -->
         <div class="form-group">
-            {!! Form::label('Имя') !!}
+            {!! Form::label('Name') !!}
             {!! Form::text('name', null, 
                 array('required', 
                       'class'=>'form-control', 
-                      'placeholder'=>'Ваше имя',
+                      'placeholder'=>'Your name',
                       'maxlength' => '50')) !!}
         </div>
         <!-- /.Name -->
 
         <!-- Message -->
         <div class="form-group">
-            {!! Form::label('Сообщение') !!}
+            {!! Form::label('Message') !!}
             {!! Form::textarea('comment', null, 
                 array('required', 
                       'class'=>'form-control', 
-                      'placeholder'=>'Не больше 140 символов',
+                      'placeholder'=>'Less than 140 symbols',
                       'maxlength' => '140',
                       'rows' => '2')) !!}
         </div>
         <!-- /.Message -->
         <div class="form-group">
-            {!! Form::submit('Оставить!', 
+            {!! Form::submit('Send!', 
               array('class' => 'btn btn-success')) !!}
         </div>
     {!! Form::close() !!}

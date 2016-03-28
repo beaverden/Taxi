@@ -3,7 +3,7 @@
 
 
 <div class="page-header">
-    <h2 class="page-header text-center">Коллектив</h2>
+    <h2 class="page-header text-center">People</h2>
     @foreach ($crew as $member)
     <div class="media">
         <div class="media-left">

@@ -48,35 +48,35 @@
         <div class="row-fluid navbar menu">
             <a href="">
                 <div class="col col-lg-2 col-lg-offset-2 menuitem">
-                    <i class="fa fa-refresh fa-lg"></i> Обновить
+                    <i class="fa fa-refresh fa-lg"></i> Update
                 </div>
             </a>
             <a href="/admin/orders">
                 <div class="col col-lg-2 dropdown menuitem ">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-car fa-lg"></i> Заказы<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-car fa-lg"></i> Orders<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <li><a href="/admin/orders">Активные</a></li>
-                          <li><a href="/admin/orders/done">Выполненные</a></li>
-                          <li><a href="/admin/orders/erased">Удаленные</a></li>
+                          <li><a href="/admin/orders">Active</a></li>
+                          <li><a href="/admin/orders/done">Finished</a></li>
+                          <li><a href="/admin/orders/erased">Deleted</a></li>
                         </ul>
                     
                 </div>
             </a>
             <a href="/admin/comments">
                 <div class="col col-lg-2 menuitem">
-                    <i class="fa fa-comments fa-lg"></i> Отзывы
+                    <i class="fa fa-comments fa-lg"></i> Comments
                 </div>
             </a>
             <a href="/admin/general">
-                <div class="col col-lg-1 menuitem" title="Общие настройки">
+                <div class="col col-lg-1 menuitem" title="General settings">
                     <i class="fa fa-cog fa-lg"></i>
-                    <span class="hidden-lg"> Общее<span>
+                    <span class="hidden-lg"> General<span>
                 </div>
             </a>
             <a href="/admin/exit">
-                <div class="col col-lg-1 span4 menuitem" title="Выйти">
+                <div class="col col-lg-1 span4 menuitem" title="Exit">
                     <i class="fa fa-chain-broken fa-lg"></i>
-                    <span class="hidden-lg"> Выйти<span>
+                    <span class="hidden-lg"> Exit<span>
                 </div>
             </a>
         </div>

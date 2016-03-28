@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-    <h3 class="page-header">Контакты</h3>
+    <h3 class="page-header">Contacts</h3>
     @foreach($contacts as $contact)
         <div class="media">
                 <h4 class="media-heading">

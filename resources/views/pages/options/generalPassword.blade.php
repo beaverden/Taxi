@@ -8,38 +8,38 @@
             {!! Form::open(array('action' => 'AdminSettingsController@changePassword')) !!}
             <!-- Old Password -->
             <div class="form-group">
-                {!! Form::label('Старый пароль') !!}
+                {!! Form::label('Old password') !!}
                 {!! Form::password('oldpassword', 
                     array('required', 
                           'class' => 'form-control', 
-                          'placeholder' => 'Введите старый пароль',
+                          'placeholder' => 'Enter the old password',
                           'maxlength' => '50')) !!}
             </div>
             <!-- /. Old Password -->
 
             <!-- New Password -->
             <div class="form-group">
-                {!! Form::label('Новый пароль') !!}
+                {!! Form::label('New password') !!}
                 {!! Form::password('newpassword', 
                     array('required', 
                           'class' => 'form-control', 
-                          'placeholder' => 'Введите новый пароль',
+                          'placeholder' => 'Enter the new password',
                           'maxlength' => '50')) !!}
             </div>
             <!-- /. New Password -->
             
             <!-- Repeat New Password -->
             <div class="form-group">
-                {!! Form::label('Повторите новый пароль') !!}
+                {!! Form::label('Repeat the new password') !!}
                 {!! Form::password('rnewpassword', 
                     array('required', 
                           'class' => 'form-control', 
-                          'placeholder' => 'Введите новый пароль повторно',
+                          'placeholder' => 'New password',
                           'maxlength' => '50')) !!}
             </div>
             <!-- /. Repeat New Password -->
             <div class="form-group">
-                {!! Form::submit('Подтвердить', 
+                {!! Form::submit('Submit', 
                   array('class' => 'btn btn-success')) !!}
             </div>
 

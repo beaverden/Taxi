@@ -2,22 +2,15 @@
 
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use Flash;
-use Session;
 use Auth;
-use Validator;
 use Input;
 use Redirect;
 use Firewall;
 use Hash;
 use Image;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use App\Models\Comment;
-use App\Models\Order;
 use App\Models\Blocked;
 use App\Models\Contact;
 use App\Models\Crew;
@@ -33,7 +26,7 @@ class AdminSettingsController extends Controller
     public function adminGeneral() 
     {
         $data = [
-            'title' => 'Общие настройки'
+            'title' => 'Main settings'
         ];
         return view('pages.options.adminGeneral')->with($data); 
     }  
@@ -46,7 +39,7 @@ class AdminSettingsController extends Controller
     public function generalPassword() 
     {
         $data = [
-            'title' => 'Поменять пароль'
+            'title' => 'Change password'
         ];
         return view('pages.options.generalPassword')->with($data); 
     }
@@ -71,11 +64,11 @@ class AdminSettingsController extends Controller
                 $user->password = Hash::make($new_password);
                 $user->save();
                 
-                Flash::message('Пароль успешно изменен');
+                Flash::message('Password successfully changed');
                 return Redirect::route('generalPassword');
             } else 
             {
-                Flash::message('Введите все данные правильно');
+                Flash::message('Enter all the date correctly');
                  return Redirect::route('generalPassword');
             }
         } else 
@@ -92,7 +85,7 @@ class AdminSettingsController extends Controller
         if (Auth::check()) 
         {
             $data = [
-                'title' => 'Заблокированные',
+                'title' => 'Blocked users',
                 'blocked' => Blocked::paginate(30)
             ];
             return view('pages.options.blocked')->with($data);
@@ -132,7 +125,7 @@ class AdminSettingsController extends Controller
         if (Auth::check()) 
         {
             $data = [
-                'title' => 'Список контактов',
+                'title' => 'Contacts list',
                 'contacts' => Contact::all(),
             ];
            return view('pages.options.changeContacts')->with($data);
@@ -194,7 +187,7 @@ class AdminSettingsController extends Controller
     }   
     
     /**
-     * Deletes the comment selected by the user
+     * Deletes the comment selected by the admin
      * @return type Redirect
      */
     public function deleteContact() 
@@ -220,7 +213,7 @@ class AdminSettingsController extends Controller
         {
             $data = [
                 'crew' => Crew::all(),
-                'title' => 'Команда',
+                'title' => 'Crew',
                 
             ];
             return view('pages.options.changeCrew')->with($data);
@@ -245,6 +238,7 @@ class AdminSettingsController extends Controller
             $member->photo = "img/photos/images.jpg";
             if(Input::file())
             {
+                //Member's photo is not default
                 $image = Input::file('photo');
                 $filename  = time() . '.' . $image->getClientOriginalExtension();
 
@@ -256,7 +250,7 @@ class AdminSettingsController extends Controller
                 
            }
            $member->save();
-           Flash::message('Участник успешно добавлен');
+           Flash::message('Member successfully added');
            return Redirect::route('changeCrew');
         } else 
         {
@@ -302,7 +296,8 @@ class AdminSettingsController extends Controller
                 
            }
            $member->save();   
-           Flash::message('Участник успешно сохранен');
+           Flash::message('Member successfully saved');
+           
            return Redirect::route('changeCrew');
         } else 
         {
