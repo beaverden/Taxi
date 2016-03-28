@@ -12,7 +12,7 @@
    Ex: For XAMPP it would be /htdocs/laravel/
 2. **Enter** your command prompt and run `composer install`
 3. **Run** `composer update`
-4. **Rename** the .env.example file to `.env` (if it doesn't exist already)
+4. **Rename** the `.env.example` file to `.env` (if it doesn't exist already)
 5. **Run** `php artisan key:generate`, **copy** the key into `.env` after `APP_KEY=`
 6. **Import** the Dabase `export.sql`
 6. Now the project should be ready to go
