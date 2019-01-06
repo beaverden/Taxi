@@ -1,4 +1,4 @@
-
+#### This repository contains code I wrote while learning php and laravel. The versioning on the tools used is pretty old. Please consider contributing, if you are interested. For production, this app might need a few extra touches, as I cannot fully stand for the security of it nor for the unfixed exploits due to the old versions.
 
 ## Tools used
 * [Bootstrap 3.3.5](http://getbootstrap.com)
