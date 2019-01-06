@@ -21,13 +21,13 @@
 
 ## Features Provided
 * The main page listing general information about the site.
-* /order page offering the user the possibility to leave an order.
-* /contacts page that lists all the needed contacts.
-* /comments page where users can leave their opinion about the service.
-* /about page providing short information about the team.
+* `/order` page offering the user the possibility to leave an order.
+* `/contacts` page that lists all the needed contacts.
+* `/comments` page where users can leave their opinion about the service.
+* `/about` page providing short information about the team.
 * Telephone hyperlinks that allow the user to call the number right away.
 
-* The site also has /admin page, where you can login and manipulate with the content on the pages listed above:
+* The site also has `/admin` page, where you can login and manipulate with the content on the pages listed above:
   * Moving, completing, deleting user orders.
   * Blocking/Unblocking a certain user.
   * Deleting a certain comment.
