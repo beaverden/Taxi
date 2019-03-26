@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIpColumn extends Migration
+class AddCommentIpColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class AddIpColumn extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->string('ip',20)->after('destination');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->string('ip',20)->after('email');
         });
-        
     }
 
     /**
@@ -25,7 +24,7 @@ class AddIpColumn extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('comments', function (Blueprint $table) {
             $table->dropColumn('ip');
         });
     }
